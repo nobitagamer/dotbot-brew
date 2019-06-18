@@ -83,5 +83,5 @@ class Brew(dotbot.Plugin):
 
     def _bootstrap_cask(self):
         self._bootstrap_brew()
-        cmd = "brew tap caskroom/cask"
+        cmd = "brew tap homebrew/cask"
         self._bootstrap(cmd)
