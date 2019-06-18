@@ -94,11 +94,11 @@ class Brew(dotbot.Plugin):
 
     def _bootstrap_brew(self):
         link = "https://raw.githubusercontent.com/Homebrew/install/master/install.sh"
-        cmd = """hash brew || /bin/bash -c "$(curl -fsSL {0})";
+        cmd = """hash brew || NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL {0})";
               brew update""".format(link)
         self._bootstrap(cmd)
 
     def _bootstrap_cask(self):
         self._bootstrap_brew()
-        cmd = "brew tap caskroom/cask"
+        cmd = "brew tap homebrew/cask"
         self._bootstrap(cmd)
