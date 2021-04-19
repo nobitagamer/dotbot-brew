@@ -17,7 +17,7 @@ class Brew(dotbot.Plugin):
             return self._process_data("brew install", data)
         if directive == self._caskDirective:
             self._bootstrap_cask()
-            return self._process_data("brew cask install", data)
+            return self._process_data("brew install cask", data)
         raise ValueError('Brew cannot handle directive %s' % directive)
 
     def _tap(self, tap_list):
